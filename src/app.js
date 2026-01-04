@@ -4,6 +4,7 @@ import db from './db/db.js'
 import userRouter from './routes/auth.routes.js'
 import cookieParser from 'cookie-parser'
 import taskRouter from './routes/task.routes.js'
+import cors from 'cors'
 
 dotenv.config({
     path: './.env'
@@ -15,11 +16,7 @@ db()
 
 app.use(
     cors({
-        origin: [
-            "http://localhost:3000",
-            "https://smarttodoapi.vercel.app",
-            "https://smarttodoapi.sahinmallick.tech"
-        ],
+        origin: '*',
         credentials: true,
     }),
 );

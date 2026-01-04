@@ -7,27 +7,74 @@ A secure, scalable, and production-ready **RESTful API** for task management wit
 
 ---
 
-## 🚀 Live Postman Collection (⭐ MOST IMPORTANT)
+## 🚀 Live Postman Collection
 
 ### 👉 **Postman Collection URL**
 🔗 **https://www.postman.com/payload-participant-53886508/workspace/sahin-s-public-collections/collection/26052006-e27dce85-bea7-4d53-86e9-8731489ce9a9?action=share&source=copy-link&creator=26052006**
 
 > ✔ Includes **Auth APIs**, **Task CRUD**, **Error cases**, and **Protected routes**  
 > ✔ Cookie-based authentication supported  
-> ✔ Ready to run — just set the `BASE_URL` environment variable  
+> ✔ Works directly with the **live deployed API on Vercel**  
+> ✔ No local setup required to test the API  
 
 ---
 
 ## 🔧 Postman Environment Setup
 
-Create the following environment variables in Postman:
+### ▶️ Live API (Deployed on Vercel)
 
-BASE_URL = http://localhost:3000/api/v1
+## This backend is **publicly deployed**, so you can test it **immediately** via Postman.
+
+## Create the following environment variable in Postman:
+
+```env
+BASE_URL = https://smarttodoapi.vercel.app/api/v1
+🖥️ Local Setup (Optional)
+
+If you prefer to run the API locally on your machine, follow the steps below.
+
+1️⃣ Clone the repository
+git clone https://github.com/your-username/SmartToDoAPI.git
+cd SmartToDoAPI
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Configure environment variables
+
+Create a .env file in the root directory:
+
+PORT=4000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET_ACCESS_TOKEN=your_jwt_secret
+EMAIL_HOST=your_smtp_host
+EMAIL_USERNAME=your_email_username
+EMAIL_PASSWORD=your_email_password
+URL=http://localhost:4000
+NODE_ENV=development
+
+4️⃣ Start the development server
+npm run dev
 
 
-> Login once → cookies will be stored automatically for protected routes.
+The API will be available at:
 
----
+http://localhost:4000
+
+5️⃣ Use Postman locally
+
+Update the Postman environment variable:
+
+BASE_URL = http://localhost:4000/api/v1
+
+
+The same Postman collection works for both live and local environments by simply switching the BASE_URL.
+
+🧠 Note for Reviewers
+
+This project is deployed and publicly accessible.
+All API flows can be tested instantly via Postman using the live URL above, or locally if preferred.
+
 
 ## 🚀 Features
 
