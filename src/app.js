@@ -13,6 +13,17 @@ const app =  express()
 
 db()
 
+app.use(
+    cors({
+        origin: [
+            "http://localhost:3000",
+            "https://smarttodoapi.vercel.app",
+            "https://smarttodoapi.sahinmallick.tech"
+        ],
+        credentials: true,
+    }),
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
