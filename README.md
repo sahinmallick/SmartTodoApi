@@ -1,0 +1,185 @@
+# 📝 Smart ToDo API
+
+A secure, scalable, and production-ready **RESTful API** for task management with authentication, email verification, and full CRUD operations.
+
+> ⚠️ **Important for Reviewers:**  
+> The complete API can be tested directly using the **Postman Collection link below**.
+
+---
+
+## 🚀 Live Postman Collection (⭐ MOST IMPORTANT)
+
+### 👉 **Postman Collection URL**
+🔗 **https://www.postman.com/payload-participant-53886508/workspace/sahin-s-public-collections/collection/26052006-e27dce85-bea7-4d53-86e9-8731489ce9a9?action=share&source=copy-link&creator=26052006**
+
+> ✔ Includes **Auth APIs**, **Task CRUD**, **Error cases**, and **Protected routes**  
+> ✔ Cookie-based authentication supported  
+> ✔ Ready to run — just set the `BASE_URL` environment variable  
+
+---
+
+## 🔧 Postman Environment Setup
+
+Create the following environment variables in Postman:
+
+BASE_URL = http://localhost:3000/api/v1
+
+
+> Login once → cookies will be stored automatically for protected routes.
+
+---
+
+## 🚀 Features
+
+### 🔐 Authentication & Security
+- User Registration with Email Verification
+- Secure Login using **JWT (HTTP-only cookies)**
+- Logout support
+- Forgot Password & Reset Password flow
+- Password hashing using **bcrypt**
+- Protected routes using authentication middleware
+
+### ✅ Task Management
+- Create tasks
+- Get all tasks (user-specific)
+- Update tasks (partial updates supported)
+- Delete tasks
+- Tasks are **isolated per user**
+
+### 🛡️ Best Practices
+- Proper HTTP status codes
+- Centralized validation
+- Clean error handling
+- Secure cookie configuration
+- Environment-based configuration
+- MongoDB + Mongoose schema design
+- Scalable folder structure
+
+---
+
+## 🧰 Tech Stack
+
+- **Node.js**
+- **Express.js**
+- **MongoDB & Mongoose**
+- **JWT (jsonwebtoken)**
+- **bcryptjs**
+- **Zod** (request validation)
+- **Nodemailer** (email handling)
+- **Postman** (API testing)
+
+---
+
+## 📂 Project Structure
+
+SmartToDoAPI/
+├── src/
+│ ├── controllers/
+│ │ ├── auth.controllers.js
+│ │ └── task.controllers.js
+│ ├── models/
+│ │ ├── user.model.js
+│ │ └── task.model.js
+│ ├── routes/
+│ │ ├── auth.routes.js
+│ │ └── task.routes.js
+│ ├── middlewares/
+│ │ ├── auth.middleware.js
+│ │ └── validate.js
+│ ├── validators/
+│ │ └── auth.validators.js
+│ ├── utils/
+│ │ └── mail.js
+│ └── index.js
+├── .env
+├── package.json
+└── README.md
+
+
+▶️ Getting Started
+1️⃣ Clone the repository
+git clone https://github.com/sahinmallick/SmartToDoAPI.git
+cd SmartToDoAPI
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Run the server
+npm run dev
+
+
+Server will start at:
+
+http://localhost:3000
+
+🔑 Authentication Flow
+
+Register user
+
+Receive email verification link
+
+Verify account
+
+Login (JWT stored in HTTP-only cookie)
+
+Access protected routes
+
+📌 API Endpoints
+Auth Routes
+Method	Endpoint	Description
+POST	/api/v1/auth/register	Register new user
+GET	/api/v1/auth/verify-user/:token	Verify email
+POST	/api/v1/auth/login	Login user
+POST	/api/v1/auth/logout	Logout user
+POST	/api/v1/auth/forgot-password	Request reset
+POST	/api/v1/auth/reset-password/:token	Reset password
+GET	/api/v1/auth/user	Get current user
+
+Task Routes (Protected)
+Method	Endpoint	Description
+POST	/api/v1/tasks	Create task
+GET	/api/v1/tasks	Get all tasks
+PUT	/api/v1/tasks/:id	Update task
+DELETE	/api/v1/tasks/:id	Delete task
+
+🧪 API Testing
+
+Tested using Postman
+
+Cookie-based authentication supported
+
+Collection includes:
+
+Auth flows
+
+Task CRUD
+
+Error cases
+
+🧠 Design Decisions
+
+Cookie-based JWT chosen for security against XSS
+
+Tasks scoped to users for isolation
+
+Zod used for strict request validation
+
+Password hashing handled via Mongoose hooks
+
+Clear separation of concerns (controllers, models, routes)
+
+📈 Possible Enhancements
+
+Role-based access control (RBAC)
+
+Task pagination & filtering
+
+Rate limiting
+
+Unit & integration tests
+
+👨‍💻 Author
+
+Sahin Mallick
+Full-Stack Developer
+hi@sahinmallick.tech
